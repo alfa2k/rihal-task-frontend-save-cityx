@@ -1,0 +1,202 @@
+:root {
+  --primary-color: #eae9ec;
+  --secondary-color: #f72585;
+  --dark-color: #74878f;
+  --light-color: #f8f9fa;
+  --success-color: #38b000;
+  --warning-color: #ffaa00;
+  --danger-color: #d00000;
+  --info-color: #00b4d8;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.mantine-dark {
+  background-color: #1a1b1e;
+  color: #ffffff;
+}
+
+/* Dark Mode Global Styles */
+.mantine-dark, 
+.mantine-dark * {
+  background-color: #1a1b1e;
+  color: rgba(255, 255, 255, 0.9) !important;
+
+  /* Specific filter panel dark mode styles */
+  .mantine-Paper-root {
+    background-color: var(--mantine-color-dark-7) !important;
+  }
+
+  /* Text labels in filter panel */
+  .mantine-Text-root {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  /* Badge styling in dark mode */
+  .mantine-Badge-root[data-variant="light"] {
+    color: rgba(255, 255, 255, 0.7) !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .mantine-Badge-root[data-variant="filled"] {
+    color: white !important;
+  }
+}
+
+.shadow-card {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shadow-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.crime-type-robbery { color: var(--danger-color); }
+.crime-type-assault { color: var(--warning-color); }
+.crime-type-homicide { color: var(--danger-color); }
+.crime-type-kidnapping { color: var(--info-color); }
+.crime-type-theft { color: var(--secondary-color); }
+
+/* Dark mode status styles */
+.mantine-dark {
+  .status-pending { background-color: rgba(255, 232, 214, 0.2); color: #ffb74d; }
+  .status-en-route { background-color: rgba(216, 226, 220, 0.2); color: #81c784; }
+  .status-on-scene { background-color: rgba(190, 225, 230, 0.2); color: #4dd0e1; }
+  .status-under-investigation { background-color: rgba(205, 218, 253, 0.2); color: #9fa8da; }
+  .status-resolved { background-color: rgba(216, 243, 220, 0.2); color: #81c784; }
+}
+
+.status-pending { background-color: #ffe8d6; color: #994700; }
+.status-en-route { background-color: #d8e2dc; color: #3a5a40; }
+.status-on-scene { background-color: #bee1e6; color: #00567a; }
+.status-under-investigation { background-color: #cddafd; color: #3a0ca3; }
+.status-resolved { background-color: #d8f3dc; color: #1b4332; }
+
+.map-container { 
+  height: calc(100vh - 80px); 
+  width: 100%; 
+  border-radius: 12px; 
+  overflow: hidden; 
+}
+
+.crime-marker {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-weight: bold;
+}
+
+.marker-robbery { background-color: var(--danger-color); }
+.marker-assault { background-color: var(--warning-color); }
+.marker-homicide { background-color: var(--danger-color); }
+.marker-kidnapping { background-color: var(--info-color); }
+.marker-theft { background-color: var(--secondary-color); }
+
+.report-form {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.header {
+  background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.filter-tag {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.filter-tag.active {
+  border-color: var(--primary-color);
+  font-weight: bold;
+}
+
+.search-bar { 
+  position: relative; 
+  margin-bottom: 20px; 
+}
+
+.search-icon { 
+  position: absolute; 
+  top: 50%; 
+  left: 15px; 
+  transform: translateY(-50%); 
+  color: #6c757d; 
+}
+
+.search-input {
+  padding: 12px 12px 12px 45px;
+  border-radius: 30px;
+  border: 1px solid #e9ecef;
+  width: 100%;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(58, 12, 163, 0.1);
+}
+
+.crime-popup { 
+  padding: 0; 
+  border-radius: 8px; 
+  overflow: hidden; 
+  min-width: 250px; 
+}
+
+.crime-popup-header { 
+  padding: 12px; 
+  border-bottom: 1px solid #e9ecef; 
+}
+
+.crime-popup-body { 
+  padding: 12px; 
+}
+
+.crime-popup-footer { 
+  padding: 12px; 
+  border-top: 1px solid #e9ecef; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+.pulse-animation { 
+  animation: pulse 2s infinite; 
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(58, 12, 163, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(58, 12, 163, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(58, 12, 163, 0); }
+}
