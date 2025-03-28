@@ -487,7 +487,7 @@ function Dashboard() {
         <div style={{ flex: 1, overflow: 'hidden', position: 'relative' }}>
           {activeTab === 'map' && (
             <div style={{ height: '100%' }}>
-              <CrimeMap isDark={isDark} sidebarCollapsed={screenSize.sidebarCollapsed} />
+              <CrimeMap isDark={isDark} sidebarCollapsed={screenSize.sidebarCollapsed} isMobile={screenSize.isMobile} />
             </div>
           )}
           {activeTab === 'stats' && (

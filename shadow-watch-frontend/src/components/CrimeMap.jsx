@@ -5,7 +5,7 @@ import useCrimeStore from '../store/crimestore';
 
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
 
-function CrimeMap({ isDark, sidebarCollapsed }) {
+function CrimeMap({ isDark, sidebarCollapsed, isMobile }) {
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
   const markersRef = useRef([]);
@@ -285,16 +285,17 @@ function CrimeMap({ isDark, sidebarCollapsed }) {
         className="map-container"
       />
       {/* Bottom-right overlay for legends and style selector */}
-      <div style={{
-        position: 'absolute',
-        bottom: '20px',
-        right: '20px',
-        zIndex: 1000,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '8px',
-        paddingBottom: '8px'
-      }}>
+      {!isMobile && (
+        <div style={{
+          position: 'absolute',
+          bottom: '20px',
+          right: '20px',
+          zIndex: 1000,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '8px',
+          paddingBottom: '8px'
+        }}>
         {/* Legend for Crime Type */}
         <div style={{
           background: isDark ? 'rgba(26,27,37,0.9)' : 'rgba(255,255,255,0.9)',
@@ -382,6 +383,7 @@ function CrimeMap({ isDark, sidebarCollapsed }) {
           </select>
         </div>
       </div>
+    )}
       <style>{`
         .mapboxgl-popup { max-width: 300px; }
         .mapboxgl-popup-content { padding: 0; border-radius: 8px; }
