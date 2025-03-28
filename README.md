@@ -2,7 +2,7 @@
 
 Save CityX is a responsive, Vite/React-based application for monitoring and reporting crimes in real time. The project features an interactive Mapbox map with crime markers, filtering options, and real-time statistics. The UI adapts to different screen sizes and modes (light/dark) for an optimal user experience.
 
-[![Watch the demo video]](https://youtu.be/fV2bALVf_CA?si=mDAPrkX9E8ni7rOU)
+[Watch the demo video](https://youtu.be/fV2bALVf_CA?si=mDAPrkX9E8ni7rOU)
 
 
 ## Features
